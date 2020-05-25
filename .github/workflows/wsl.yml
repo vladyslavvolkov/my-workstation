@@ -2,7 +2,10 @@ name: Prepare WSL distributions
 on: push
 jobs:
   alpine:
+    name: Alpine WSL Repack
     runs-on: windows-latest
+    container:
+      image: mcr.microsoft.com/windows/servercore:2004
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
