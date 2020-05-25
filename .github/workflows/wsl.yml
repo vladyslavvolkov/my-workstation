@@ -4,15 +4,22 @@ jobs:
   debian:
     runs-on: windows-2019
     steps:
-      - name: Install WSL
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Import WSL
         shell: powershell
-        run: |
+        run: |-
           DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-          curl.exe -L -o Ubuntu.appx https://aka.ms/wsl-ubuntu
-          Rename-Item .\Ubuntu.appx .\Ubuntu.zip
-          Expand-Archive .\Ubuntu.zip .\Ubuntu
-          $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
-          [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
+          Invoke-WebRequest -Uri https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz -OutFile ubuntu-rootfs.tar.gz -UseBasicParsing
+          wsl --import ubuntu ubuntu ubuntu-rootfs.tar.gz
       - name: Launch Linux WSL
         shell: powershell
-        run: Ubuntu.exe
+        run: wsl --distribution ubuntu --user root --exec linux/debian.sh
+      - name: Export WSL
+        shell: powershell
+        run: wsl --export Ubuntu ubuntu.tar.gz
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: homework
+          path: homework/math-homework.txt
