@@ -1,0 +1,12 @@
+name: Prepare WSL distributions
+on: push
+jobs:
+  debian:
+    runs-on: windows-latest
+    steps:
+      - name: Install WSL
+        shell: powershell
+        run: DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+      - name: Check if Bash is available
+        shell: powershell
+        run: bash --version
