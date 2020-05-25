@@ -6,17 +6,13 @@ jobs:
     steps:
       - name: Install WSL
         shell: powershell
-        run: DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-      - name: Download Linux distribution
-        shell: powershell
-        run: curl.exe -L -o Ubuntu.appx https://aka.ms/wsl-ubuntu
-      - name: Install WSL
-        shell: powershell
         run: |
+          DISM /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+          curl.exe -L -o Ubuntu.appx https://aka.ms/wsl-ubuntu
           Rename-Item .\Ubuntu.appx .\Ubuntu.zip
           Expand-Archive .\Ubuntu.zip .\Ubuntu
           $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
           [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
-      - name: Launch WSL
+      - name: Launch Linux WSL
         shell: powershell
         run: Ubuntu.exe
