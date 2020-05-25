@@ -7,11 +7,11 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL feature
-        runs: |-
+        run: |-
           dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
           curl.exe -L -o .\build\tmp\alpine.tar.gz http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.6-x86_64.tar.gz
       - name: Import WSL rootfs
-        runs: wsl.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
+        run: wsl.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
       - name: Bootstrap Linux system
         run: wsl.exe --distribution alpine --user root --exec linux/alpine.sh
       - name: Export bootstrapped distribution
