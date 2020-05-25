@@ -4,7 +4,7 @@ jobs:
   alpine:
     name: Alpine WSL Repack
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/windows/servercore:2004
+    container: mcr.microsoft.com/windows/insider:10.0.19624.1000
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
