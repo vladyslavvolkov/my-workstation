@@ -3,6 +3,7 @@ on: push
 jobs:
   alpine:
     name: Alpine WSL Repack
+    runs-on: ubuntu-latest
     container: mcr.microsoft.com/windows/servercore:2004
     steps:
       - name: Checkout sources
