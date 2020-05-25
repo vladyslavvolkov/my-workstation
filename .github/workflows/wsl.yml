@@ -2,7 +2,7 @@ name: Prepare WSL distributions
 on: push
 jobs:
   debian:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - name: Install WSL
         shell: powershell
