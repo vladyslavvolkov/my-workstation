@@ -7,7 +7,6 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL feature
-        shell: powershell
         run: |-
           dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
           curl.exe -L -o .\build\tmp\alpine.tar.gz http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.6-x86_64.tar.gz
