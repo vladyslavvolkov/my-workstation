@@ -52,4 +52,4 @@ echo "$config" > /etc/wsl.conf
 echo "Downloading Ansible roles"
 wget -O- https://github.com/Hiberbee/ansible/archive/master.tar.gz | tar xvz -C /etc/ansible --strip=1
 cd /etc/ansible || exit
-ansible-playbook /etc/ansible/playbook.yml
+ansible-playbook playbook.yml
