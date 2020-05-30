@@ -21,7 +21,7 @@ ubuntu | debian)
     wget
   wget -O- https://bootstrap.pypa.io/get-pip.py | python3
   pip3 install --upgrade --prefer-binary ansible
-  apt-get purge snapd pulseaudio-utils fonts-dejavu-core git python3-setuptools python3-distutils python3-wheel --yes
+  apt-get purge snapd pulseaudio-utils fonts-dejavu-core git python3-setuptools python3-wheel --yes
   apt-get autoremove --yes
   apt-get autoclean --yes
   apt-get clean
@@ -52,4 +52,4 @@ echo "$config" > /etc/wsl.conf
 echo "Downloading Ansible roles"
 wget -O- https://github.com/Hiberbee/ansible/archive/master.tar.gz | tar xvz -C /etc/ansible --strip=1
 cd /etc/ansible || exit
-ansible --version
+ansible-playbook /etc/ansible/playbook.yml
