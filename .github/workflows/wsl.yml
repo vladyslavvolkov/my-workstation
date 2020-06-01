@@ -3,7 +3,7 @@ on: push
 jobs:
   alpine:
     name: Alpine WSL Repack
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
@@ -11,6 +11,7 @@ jobs:
         run: |-
           dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
           curl.exe -L -o .\build\tmp\alpine.tar.gz http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.6-x86_64.tar.gz
+          winver
       - name: Import WSL rootfs
         run: wsl.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
       - name: Bootstrap Linux system
