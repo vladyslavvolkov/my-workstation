@@ -3,8 +3,7 @@ on: push
 jobs:
   alpine:
     name: Alpine WSL Repack
-    runs-on: ubuntu-latest
-    container: mcr.microsoft.com/windows/insider:10.0.19624.1000
+    runs-on: windows-latest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
@@ -13,11 +12,11 @@ jobs:
           dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
           curl.exe -L -o .\build\tmp\alpine.tar.gz http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.6-x86_64.tar.gz
       - name: Import WSL rootfs
-        run: bash.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
+        run: wsl.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
       - name: Bootstrap Linux system
-        run: bash.exe --distribution alpine --user root --exec linux/alpine.sh
+        run: wsl.exe --distribution alpine --user root -- eval ("curl -o- https://raw.githubusercontent.com/vladyslavvolkov/.env/master/wsl.sh | OS=ubuntu sh")
       - name: Export bootstrapped distribution
-        run: bash.exe --export alpine .\build\dist\alpine.tar.gz
+        run: wsl.exe --export alpine .\build\dist\alpine.tar.gz
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
