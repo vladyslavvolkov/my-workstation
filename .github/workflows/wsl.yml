@@ -8,7 +8,7 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL feature
-        run: choco install wsl
+        run: choco install wsl --yes
       - name: Import WSL rootfs
         shell: powershell
         run: wsl --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
