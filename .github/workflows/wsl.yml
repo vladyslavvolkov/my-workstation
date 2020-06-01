@@ -8,16 +8,16 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL feature
-        run: choco install wsl --yes
+        run: |-
+          dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+          dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+          curl.exe -L -o .\build\tmp\alpine.tar.gz http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.6-x86_64.tar.gz
       - name: Import WSL rootfs
-        shell: powershell
-        run: wsl --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
+        run: wsl.exe --import alpine .\build\rootfs\alpine .\build\tmp\alpine.tar.gz
       - name: Bootstrap Linux system
-        shell: powershell
-        run: wsl --distribution alpine --user root -- eval ("curl -o- https://raw.githubusercontent.com/vladyslavvolkov/.env/master/wsl.sh | OS=ubuntu sh")
+        run: wsl.exe --distribution alpine --user root -- eval ("curl -o- https://raw.githubusercontent.com/vladyslavvolkov/.env/master/wsl.sh | OS=ubuntu sh")
       - name: Export bootstrapped distribution
-        shell: powershell
-        run: wsl --export alpine .\build\dist\alpine.tar.gz
+        run: wsl.exe --export alpine .\build\dist\alpine.tar.gz
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
