@@ -1,2 +1,9 @@
-# .env
-My development environment configuration for macOS &amp; Windows
+# Environment
+
+## WSL
+
+Run in Power Shell terminal:
+
+```powershell
+.\wsl.ps1 alpine
+```

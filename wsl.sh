@@ -60,7 +60,7 @@ EOF
 echo "$config" > /etc/wsl.conf
 
 echo "Linking ssh keys"
-[ ! -d "/mnt/c/Users/$hostUser/.ssh" ] || ln -s "/mnt/c/Users/$hostUser/.ssh" "$HOME/.ssh"
+[ ! -d "/mnt/c/Users/$hostUser/.ssh" ] || cp -rf "/mnt/c/Users/$hostUser/.ssh" "$HOME/.ssh"
 
 [ -d $ansibleDirectory ] || mkdir $ansibleDirectory
 echo "Downloading Ansible roles"
