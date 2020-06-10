@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 distribution=${OS:-alpine}
+hostUser=${HOST_USER}
+ansibleDirectory=/etc/ansible
 
 echo "Upgrading system packages"
 case $distribution in
@@ -57,7 +59,9 @@ EOF
 )
 echo "$config" > /etc/wsl.conf
 
-ansibleDirectory=/etc/ansible
+echo "Linking ssh keys"
+[ ! -d "/mnt/c/Users/$hostUser/.ssh" ] || ln -s "/mnt/c/Users/$hostUser/.ssh" "$HOME/.ssh"
+
 [ -d $ansibleDirectory ] || mkdir $ansibleDirectory
 echo "Downloading Ansible roles"
 wget -O- https://github.com/Hiberbee/ansible/archive/master.tar.gz | tar xvz -C /etc/ansible --strip=1
