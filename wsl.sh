@@ -17,12 +17,8 @@ centos | fedora)
   find /usr/lib/python3/site-packages | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
   ;;
 ubuntu | debian)
-  apt-get update --yes
-  apt-get install --yes \
-    python3-setuptools \
-    python3-distutils \
-    python3-wheel \
-    wget
+  apt-get update
+  apt-get install --yes python3-setuptools python3-distutils python3-wheel wget
   wget -O- https://bootstrap.pypa.io/get-pip.py | python3
   pip3 install --upgrade --prefer-binary ansible
   apt-get purge snapd pulseaudio-utils fonts-dejavu-core git python3-setuptools python3-wheel --yes
@@ -36,28 +32,6 @@ ubuntu | debian)
   echo "No actions provided for $distribution"
   ;;
 esac
-
-echo "Setting default values for WSL distribution"
-config=$(cat <<EOF
-[automount]
-enabled = true
-root = /mnt
-options = "metadata,umask=22,fmask=11"
-mountFsTab = true
-
-[network]
-generateHosts = true
-generateResolvConf = true
-
-[interop]
-enabled = false
-appendWindowsPath = false
-
-[user]
-default = "root"
-EOF
-)
-echo "$config" > /etc/wsl.conf
 
 echo "Linking ssh keys"
 [ ! -d "/mnt/c/Users/$hostUser/.ssh" ] || cp -rf "/mnt/c/Users/$hostUser/.ssh" "$HOME/.ssh"
