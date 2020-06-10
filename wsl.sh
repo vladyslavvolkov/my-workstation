@@ -7,7 +7,7 @@ case $distribution in
 alpine)
   apk add --no-cache --update ansible
   rm -rf /var/cache/apk/*
-  find /usr/lib/python3/site-packages | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+  find /usr/lib/python3.8/site-packages | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
   ;;
 centos | fedora)
   yum update -y
@@ -39,9 +39,9 @@ echo "Setting default values for WSL distribution"
 config=$(cat <<EOF
 [automount]
 enabled = true
-root = /
+root = /mnt
 options = "metadata,umask=22,fmask=11"
-mountFsTab = false
+mountFsTab = true
 
 [network]
 generateHosts = true
