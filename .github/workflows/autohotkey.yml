@@ -12,7 +12,7 @@ jobs:
         with:
           args: install autohotkey-compiler
       - name: Compile hotkeys
-        shell: powershell
+        shell: cmd
         run: |
           RefreshEnv
           Ahk2Exe.exe /in ${{ github.workspace }}\windows\autohotkey\MacWinLayout.ahk /out ${{ github.workspace }}\build\MacWinLayout.exe
