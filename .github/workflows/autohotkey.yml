@@ -1,0 +1,21 @@
+name: AutoHotKey
+on: push
+jobs:
+  compile:
+    name: Compile MacWin AHK script
+    runs-on: windows-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install AutoHotKey
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install autohotkey-compiler
+      - name: Compile hotkeys
+        shell: powershell
+        run: Ahk2Exe.exe /in ${{ github.workspace }}\windows\autohotkey\MacWinLayout.ahk /out ${{ github.workspace }}/build/MacWinLayout.exe
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: MacWinLayout.exe
+          path: ${{ github.workspace }}/build/MacWinLayout.exe
