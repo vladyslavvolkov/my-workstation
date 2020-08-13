@@ -1,0 +1,13 @@
+name: Chocolatey
+on: push
+jobs:
+  vscode:
+    name: Install VSCode packages
+    runs-on: windows-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install packages
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install windows\chocolatey\VSCode.Packages.config --yes --noop

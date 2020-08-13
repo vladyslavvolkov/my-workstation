@@ -10,6 +10,7 @@ $urls = @{
     debian = "https://www.dropbox.com/s/lx1xwi69gxasbeq/amd64-rootfs-20170318T102216Z.tar.gz?dl=1"
     ubuntu = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz"
 }
+
 if (!(Test-Path "$buildDir\tmp\$distribution.tar.gz")) {
     Write-Information "Downloading $distribution rootfs"
     Invoke-WebRequest -Uri $urls.$distribution -Out "$downloadDir\$distribution.tar.gz"
