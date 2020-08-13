@@ -1,5 +1,8 @@
 name: AutoHotKey
-on: push
+on:
+  push:
+    paths:
+      - 'windows/autohotkey/**'
 jobs:
   compile:
     name: Compile MacWin AHK script

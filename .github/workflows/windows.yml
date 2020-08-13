@@ -1,13 +1,11 @@
 name: Windows
-on: push
+on:
+  push: {}
 jobs:
   wsl:
     name: Enable WSL
     runs-on: windows-latest
     steps:
-      - name: Enable VirtualMachinePlatform
-        run: Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
-        shell: powershell
       - name: Enable WSL
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell

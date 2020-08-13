@@ -1,5 +1,8 @@
 name: Chocolatey
-on: push
+on:
+  push:
+    paths:
+      - 'windows/chocolatey/**'
 jobs:
   vscode:
     name: Install VSCode packages
