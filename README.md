@@ -5,9 +5,9 @@
 
 ### Homebrew
 
-- [MacStore](macos/AppStore.Brewfile)
-- [Applications](macos/Brewfile)
-- [Command Line Tools](macos/Console.Brewfile)
+- [MacStore](macos/homebrew/AppStore.Brewfile)
+- [Applications](macos/homebrew/Brewfile)
+- [Command Line Tools](macos/homebrew/Console.Brewfile)
 
 ## Windows
 
