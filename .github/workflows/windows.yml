@@ -14,14 +14,19 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        os: [alpine, ubuntu, debian]
+        os:
+          - alpine
+          - arch
+          - centos
+          - fedora
+          - opensuse
+          - redhat
+          - ubuntu
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-      - name: Enable SMB
-        run: Set-SmbServerConfiguration -EnableSMB2Protocol $true -Force
       - name: Download OS rootfs
         run: .\Install.ps1 ${{ matrix.os }}
       - name: Install OS

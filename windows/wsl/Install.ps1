@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh -File
+
 $name = $args[0].ToLower()
 $dir = "$PSScriptRoot\$name"
 
