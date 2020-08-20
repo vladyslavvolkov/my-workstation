@@ -12,14 +12,14 @@ jobs:
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell
       - name: Download Alpine rootfs
-        working-directory: windows\wsl
+        working-directory: ${{ github.workspace }}\windows\wsl
         run: .\Install.ps1 alpine
         shell: powershell
       - name: Install Alpine
-        working-directory: windows\wsl\alpine
+        working-directory: ${{ github.workspace }}\windows\wsl\alpine
         shell: powershell
         run: .\alpine.exe
       - name: Check Alpine version
-        working-directory: windows\wsl\alpine
+        working-directory: ${{ github.workspace }}\windows\wsl\alpine
         shell: powershell
         run: .\alpine.exe run -- cat /etc/os-release

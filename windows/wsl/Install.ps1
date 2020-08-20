@@ -1,6 +1,5 @@
 $name = $args[0].ToLower()
 $dir = "$PSScriptRoot\$name"
-$wslVersion = 1
 
 $urls = @{
   alpine = "http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/x86_64/alpine-minirootfs-3.12.0-x86_64.tar.gz"
@@ -14,7 +13,7 @@ $urls = @{
   ubuntu = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz"
 }
 
-if (!(Test-Path "rootfs.tar.gz")) {
+if (!(Test-Path "$dir\rootfs.tar.gz")) {
   Write-Information "Downloading $name rootfs"
   Invoke-WebRequest -Uri $urls.$name -Out "$dir\rootfs.tar.gz"
 }
