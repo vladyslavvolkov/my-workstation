@@ -13,11 +13,8 @@ jobs:
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell
       - name: Download Alpine rootfs
-        run: -File .\windows\wsl\Install.ps1 alpine
-        shell: powershell
+        run: powershell -File .\windows\wsl\Install.ps1 alpine
       - name: Install Alpine
-        shell: powershell
         run: .\windows\wsl\alpine\alpine.exe
       - name: Check Alpine version
-        shell: powershell
         run: .\windows\wsl\alpine\alpine.exe run -- cat /etc/os-release
