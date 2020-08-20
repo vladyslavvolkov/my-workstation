@@ -9,7 +9,7 @@ defaults:
     working-directory: .\windows\wsl
 jobs:
   alpine:
-    name: Enable WSL
+    name: Alpine
     runs-on: windows-latest
     steps:
       - name: Checkout sources
@@ -25,7 +25,7 @@ jobs:
       - name: Check OS version
         run: .\alpine\alpine.exe run -- cat /etc/os-release
   ubuntu:
-    name: Enable WSL
+    name: Ubuntu
     runs-on: windows-latest
     steps:
       - name: Checkout sources
@@ -41,7 +41,7 @@ jobs:
       - name: Check OS version
         run: .\ubuntu\ubuntu.exe run -- cat /etc/os-release
   debian:
-    name: Enable WSL
+    name: Debian
     runs-on: windows-latest
     steps:
       - name: Checkout sources
