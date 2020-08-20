@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'windows/wsl/**'
+      - '.github/workflows/windows.yml'
 jobs:
   wsl:
     name: Enable WSL
