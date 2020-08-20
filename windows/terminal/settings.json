@@ -73,71 +73,71 @@
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "name": "PowerShell",
         "commandline": "pwsh-preview.cmd -NoLogo",
-        "icon": "https://raw.githubusercontent.com/vladyslavvolkov/windows-terminal-theme/master/windows/terminal/themes/Hiberbee/icons/shell.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsWindows.jpg"
+        "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/shell.png",
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Windows.jpg"
       },
       {
         "guid": "{1a3e0431-113c-4cb7-93d6-fcb3ec34ec6e}",
         "name": "PowerShell Root",
         "commandline": "Gsudo pwsh-preview.cmd -NoLogo",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/shell-root.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsWindows-Red.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Windows-Red.jpg"
       },
       {
         "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
         "name": "Debian",
         "commandline": "D:\\WSL\\Debian\\debian.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/debian.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsDebian.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Debian.jpg"
       },
       {
-        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "guid": "{b3e8c1b2-0680-4cf7-bfad-9a9dbc9208f1}",
         "name": "Ubuntu",
         "commandline": "D:\\WSL\\Ubuntu\\ubuntu.exe run genie -s",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/ubuntu.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsUbuntu.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Ubuntu.jpg"
       },
       {
         "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
         "name": "Alpine",
         "commandline": "D:\\WSL\\Alpine\\alpine.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/alpine.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsAlpine.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Alpine.jpg"
       },
       {
         "guid": "{ce8954b9-a74b-46ae-8893-469f13def34f}",
         "name": "OpenSUSE",
         "commandline": "D:\\WSL\\OpenSUSE\\opensuse.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/opensuse.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsOpenSUSE.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/OpenSUSE.jpg"
       },
       {
         "guid": "{75a12520-b59a-4363-acd6-cc7812e82952}",
         "name": "Fedora",
         "commandline": "D:\\WSL\\Fedora\\fedora.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/fedora.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsFedora.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Fedora.jpg"
       },
       {
         "guid": "{4d4cc780-cacb-5b6f-a183-29b5f6cdcd23}",
         "name": "CentOS",
         "commandline": "D:\\WSL\\CentOS\\centos.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/centos.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsCentOS.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/CentOS.jpg"
       },
       {
         "guid": "{511b766b-2b09-5ea9-a30f-a5a6893dc158}",
         "name": "RedHat",
         "commandline": "D:\\WSL\\RedHat\\redhat.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/redhat.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsRedHat.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/RedHat.jpg"
       },
       {
         "guid": "{3d19327f-eb78-4f9b-97df-a0abab466901}",
         "name": "Arch",
         "commandline": "D:\\WSL\\Arch\\arch.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/arch.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsArch.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Arch.jpg"
       },
       {
         "guid": "{f271f22d-ee4f-58cc-85b6-493b36d45ca1}",
@@ -145,7 +145,7 @@
         "hidden": true,
         "commandline": "D:\\WSL\\Amazon\\amazon.exe",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/amazon.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsAmazon.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Amazon.jpg"
       },
       {
         "commandline": "minikube ssh",
@@ -153,7 +153,7 @@
         "hidden": true,
         "name": "Minikube",
         "icon": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/icons/minikube.png",
-        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgroundsKubernetes.jpg"
+        "backgroundImage": "https://raw.githubusercontent.com/vladyslavvolkov/my-workstation/master/windows/terminal/themes/Hiberbee/backgrounds/Kubernetes.jpg"
       },
       {
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
