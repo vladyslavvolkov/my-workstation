@@ -4,8 +4,11 @@ on:
     paths:
       - 'windows/wsl/**'
       - '.github/workflows/windows.yml'
+defaults:
+  run:
+    working-directory: .\windows\wsl
 jobs:
-  wsl:
+  alpine:
     name: Enable WSL
     runs-on: windows-latest
     steps:
@@ -14,10 +17,42 @@ jobs:
       - name: Enable WSL
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell
-      - name: Download Alpine rootfs
-        run: .\windows\wsl\Install.ps1 alpine
+      - name: Download OS rootfs
+        run: .\Install.ps1 alpine
         shell: powershell
-      - name: Install Alpine
-        run: .\windows\wsl\alpine\alpine.exe
-      - name: Check Alpine version
-        run: .\windows\wsl\alpine\alpine.exe run -- cat /etc/os-release
+      - name: Install OS
+        run: .\alpine\alpine.exe
+      - name: Check OS version
+        run: .\alpine\alpine.exe run -- cat /etc/os-release
+  ubuntu:
+    name: Enable WSL
+    runs-on: windows-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Enable WSL
+        run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        shell: powershell
+      - name: Download OS rootfs
+        run: .\Install.ps1 ubuntu
+        shell: powershell
+      - name: Install OS
+        run: .\ubuntu\ubuntu.exe
+      - name: Check OS version
+        run: .\ubuntu\ubuntu.exe run -- cat /etc/os-release
+  debian:
+    name: Enable WSL
+    runs-on: windows-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Enable WSL
+        run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        shell: powershell
+      - name: Download OS rootfs
+        run: .\Install.ps1 debian
+        shell: powershell
+      - name: Install OS
+        run: .\debian\debian.exe
+      - name: Check OS version
+        run: .\debian\debian.exe run -- cat /etc/os-release

@@ -10,11 +10,10 @@ $urls = @{
   fedora = "https://github.com/yosukes-dev/FedoraWSL/releases/download/32.2006.0/Fedora32.zip"
   redhat = "https://github.com/yosukes-dev/RHWSL/releases/download/8.2-265/RHWSL.zip"
   debian = "https://www.dropbox.com/s/lx1xwi69gxasbeq/amd64-rootfs-20170318T102216Z.tar.gz?dl=1"
-  ubuntu = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz"
+  ubuntu = "http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04-base-amd64.tar.gz"
 }
 
 if (!(Test-Path "$dir\rootfs.tar.gz")) {
   Write-Information "Downloading $name rootfs"
   Invoke-WebRequest -Uri $urls.$name -Out "$dir\rootfs.tar.gz"
 }
-
