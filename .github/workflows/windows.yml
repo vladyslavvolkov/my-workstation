@@ -13,7 +13,7 @@ jobs:
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell
       - name: Download Alpine rootfs
-        run: & ".\windows\wsl\Install.ps1" alpine
+        run: -File .\windows\wsl\Install.ps1 alpine
         shell: powershell
       - name: Install Alpine
         shell: powershell
