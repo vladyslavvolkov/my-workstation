@@ -11,8 +11,10 @@ jobs:
     steps:
       - name: Enable WSL
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        shell: powershell
       - name: Download Alpine rootfs
         run: .\windows\wsl\Install.ps1 alpine
+        shell: powershell
       - name: Install Alpine
         run: .\windows\wsl\alpine\alpine.exe
       - name: Check Alpine version
