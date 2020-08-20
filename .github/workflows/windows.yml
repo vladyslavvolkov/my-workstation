@@ -1,6 +1,8 @@
 name: Windows
 on:
-  push: {}
+  push:
+    paths:
+      - 'windows/wsl/**'
 jobs:
   wsl:
     name: Enable WSL
@@ -10,12 +12,14 @@ jobs:
         run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         shell: powershell
       - name: Download Alpine rootfs
-        working-dir: windows\wsl
+        working-directory: windows\wsl
         run: .\Install.ps1 alpine
         shell: powershell
       - name: Install Alpine
-        working-dir: windows\wsl\alpine
+        working-directory: windows\wsl\alpine
+        shell: powershell
         run: .\alpine.exe
       - name: Check Alpine version
-        working-dir: windows\wsl\alpine
+        working-directory: windows\wsl\alpine
+        shell: powershell
         run: .\alpine.exe run -- cat /etc/os-release
