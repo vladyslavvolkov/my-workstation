@@ -17,3 +17,4 @@ if (!(Test-Path "$dir\rootfs.tar.gz")) {
   Write-Information "Downloading $name rootfs"
   Invoke-WebRequest -Uri $urls.$name -Out "$dir\rootfs.tar.gz"
 }
+
