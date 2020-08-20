@@ -5,7 +5,7 @@
 ### Installing from rootfs
 
 ```powershell
-.\InstallWSL.ps1 Alpine
+.\InstallWSL.ps1 alpine
 ```
 
 Supported distributions:
