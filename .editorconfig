@@ -22,7 +22,7 @@ ij_formatter_tags_enabled = true
 ij_smart_tabs = false
 ij_wrap_on_typing = false
 
-[{*.neon, .gitmodules, *.ahk, Caddyfile, .gitconfig, ssh_config}]
+[{*.neon, .gitmodules, Caddyfile, .gitconfig, ssh_config}]
 indent_style = tab
 
 [{*.tf, *.tfvars}]
