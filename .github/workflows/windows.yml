@@ -19,9 +19,9 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Enable WSL
-        run: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        run: Dism /online /Enable-Feature /FeatureName:Microsoft-Windows-Subsystem-Linux /All
       - name: Enable SMB
-        run: Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+        run: Dism /online /Enable-Feature /FeatureName:SMB1Protocol /All
       - name: Download OS rootfs
         run: .\Install.ps1 ${{ matrix.os }}
       - name: Install OS
